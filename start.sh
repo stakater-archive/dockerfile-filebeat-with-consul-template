@@ -6,4 +6,4 @@
 # mount as a volume from our host. The result is then placed in /etc/filebeat/filebeat.yml
 # where filebeat will be able to read from.
 # We start filebeat with the configuration specified once consul-template has rendered the template
-consul-template -consul=$CONSUL_URL -template="/templates/filebeat.ctmpl:/etc/filebeat/filebeat.yml:/usr/bin/filebeat -c /etc/filebeat/filebeat.yml"
+consul-template -consul=$CONSUL_URL -template="/templates/filebeat.ctmpl:/etc/filebeat/filebeat.yml:/usr/bin/filebeat -c /etc/filebeat/filebeat.yml>/filebeat.log &"
