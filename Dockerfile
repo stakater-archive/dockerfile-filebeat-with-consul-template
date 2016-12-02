@@ -27,10 +27,8 @@ RUN unzip /usr/bin/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip &&
 
 VOLUME /templates
 
-# add the start up script (which is used as the entrypoint to our containers)
+# Make daemon service dir for filebeat if it doesn't exist, and empty service directory for filebeat if it already contains a daemon file
+RUN mkdir -p /etc/service/filebeat && rm -rf /etc/service/filebeat/*
 
-ADD start.sh /bin/start.sh
-
-# entrypoint will be the /bin/start.sh
-
-ENTRYPOINT ["/bin/start.sh"]
+# Add daemon service for filebeat-with-consul
+ADD start.sh /etc/service/filebeat/run
