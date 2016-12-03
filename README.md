@@ -1,5 +1,4 @@
-# dockerfile-filebeat-with-consul-template
-============================
+#dockerfile-filebeat-with-consul-template
 
 A Consul Template powered Filebeat docker container.
 
