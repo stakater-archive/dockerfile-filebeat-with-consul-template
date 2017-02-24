@@ -1,4 +1,4 @@
-FROM stakater/filebeat:latest
+FROM stakater/filebeat:1.2
 
 LABEL authors="Hazim <hazim_malik@hotmail.com>, Rasheed Amir <rasheed@aurorasolutions.io>"
 
