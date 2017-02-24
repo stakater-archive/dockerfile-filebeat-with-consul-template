@@ -3,7 +3,7 @@ FROM stakater/filebeat:1.2
 LABEL authors="Hazim <hazim_malik@hotmail.com>, Rasheed Amir <rasheed@aurorasolutions.io>"
 
 # setting a default value to make it work on dockerhub
-ARG CONSUL_TEMPLATE_VERSION=0.18.0-rc1
+ARG CONSUL_TEMPLATE_VERSION=0.18.0
 
 # remove all default configurations from Filbeat if any
 RUN rm -rf /etc/filebeat

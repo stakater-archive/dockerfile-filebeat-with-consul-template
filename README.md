@@ -4,7 +4,7 @@ A Consul Template powered Filebeat docker container.
 
 ## Supported Tags:
 * `5.2-0.18.0`, `latest` - filebeat v5.2 with consul template version 0.18.0 ([5.2-0.18.0/Dockerfile](https://github.com/stakater/dockerfile-filebeat-with-consul-template/blob/master/5.2/Dockerfile))
-* `1.2-0.18.0-rc1` - filebeat v1.2 with consul template version 0.18.0-rc1 ([1.2-0.18.0-rc1/Dockerfile](https://github.com/stakater/dockerfile-filebeat-with-consul-template/blob/master/1.2/Dockerfile))
+* `1.2-0.18.0` - filebeat v1.2 with consul template version 0.18.0 ([1.2-0.18.0/Dockerfile](https://github.com/stakater/dockerfile-filebeat-with-consul-template/blob/master/1.2/Dockerfile))
 
 `docker run stakater/filebeat-with-consul-template`
 
