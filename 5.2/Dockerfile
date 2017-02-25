@@ -25,8 +25,10 @@ RUN unzip /usr/bin/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip &&
 # the same image for different services and templates.
 VOLUME /templates
 
-# Make daemon service dir for filebeat if it doesn't exist, and empty service directory for filebeat if it already contains a daemon file
-RUN mkdir -p /etc/service/filebeat && rm -rf /etc/service/filebeat/*
+# Empty service directory for filebeat if it already contains a daemon file
+# Make daemon service dir for filebeat if it doesn't exist
+RUN rm -rf /etc/service/filebeat \
+    && mkdir -p /etc/service/filebeat;
 
 # Add daemon service for filebeat-with-consul
 ADD start.sh /etc/service/filebeat/run
