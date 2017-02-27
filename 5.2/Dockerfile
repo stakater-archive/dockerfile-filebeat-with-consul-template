@@ -35,7 +35,7 @@ ADD ./templates/filebeat.ctmpl /templates
 
 # Add script to stop/kill filebeat processes
 RUN mkdir -p  /etc/scripts
-ADD stop-processes.sh /etc/scripts/stop-processes.sh
+ADD kill-processes.sh /etc/scripts/kill-processes.sh
 
 # Add daemon service for filebeat-with-consul
 ADD start.sh /etc/service/filebeat/run

@@ -8,7 +8,7 @@
 # We start filebeat in background with the configuration specified once consul-template has rendered the template
 filebeat -c /etc/filebeat/filebeat.yml start -e &
 
-# Render template and kill all processes related to filebeat via stop-processes.sh
+# Render template and kill all processes related to filebeat via kill-processes.sh
 # runit will start them up again with the new configuration
 consul-template -consul-addr=$CONSUL_URL \
-                -template="/templates/filebeat.ctmpl:/etc/filebeat/filebeat.yml:/etc/scripts/stop-processes.sh filebeat"
+                -template="/templates/filebeat.ctmpl:/etc/filebeat/filebeat.yml:/etc/scripts/kill-processes.sh filebeat"
