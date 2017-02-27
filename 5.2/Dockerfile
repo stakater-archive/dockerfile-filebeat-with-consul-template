@@ -30,5 +30,12 @@ VOLUME /templates
 RUN rm -rf /etc/service/filebeat \
     && mkdir -p /etc/service/filebeat;
 
+# Add sample template
+ADD ./templates/filebeat.ctmpl /templates
+
+# Add script to stop/kill filebeat processes
+RUN mkdir -p  /etc/scripts
+ADD stop-filebeat.sh /etc/scripts/stop-filebeat.sh
+
 # Add daemon service for filebeat-with-consul
 ADD start.sh /etc/service/filebeat/run
