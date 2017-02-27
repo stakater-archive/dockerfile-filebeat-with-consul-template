@@ -6,7 +6,7 @@
 # mount as a volume from our host. The result is then placed in /etc/filebeat/filebeat.yml
 # where filebeat will be able to read from.
 # We start filebeat in background with the configuration specified once consul-template has rendered the template
-filebeat -c /etc/filebeat/filebeat.yml start &
+filebeat -c /etc/filebeat/filebeat.yml start -e &
 
 # Render template and kill all processes related to filebeat via stop-processes.sh
 # runit will start them up again with the new configuration
